@@ -6,9 +6,7 @@ blocks.forEach(() => {
     
     for (let block of blocks) {
         block.addEventListener('click', (e) => {
-            if (blocks.indexOf(block) !== 0 ) {
-                blockDiv.prepend(block);  
-            }  
+            blockDiv.prepend(block); 
 
             block.addEventListener('mousedown', (e) => {
                 block.style.position= 'relative'; 
