@@ -22,27 +22,27 @@ let pic = document.querySelector('.content-destination img');
 
 //stop propagation
 //spin container on click
-contentDest.addEventListener('mousemove', (event) => {
+contentDest.addEventListener('mousemove', () => {
     TweenMax.to(contentDest, 3, {rotation:360, scale:1, repeat:-1, yoyoEase:1, easeOut: 1});
-    contentDest.addEventListener ('mouseleave', (event) => {
+    contentDest.addEventListener ('mouseleave', () => {
         TweenMax.to(contentDest, 1, {scale: 1, rotation:0});
     });
 });
 
 //spin image on click (without affecting rest of container)
-pic.addEventListener('mousemove', (event) => {
+pic.addEventListener('mousemove', () => {
     TweenMax.to(pic, 5, {rotation:360, scale:1, repeat:-1, yoyoEase:1, easeOut: 1});
     event.stopPropagation();    
-    pic.addEventListener ('mouseleave', (event) => {
+    pic.addEventListener ('mouseleave', () => {
         TweenMax.to(pic, 1, {scale: 1, rotation:0});
     }); 
 });
 
 //Added a mouseout that listens for the mouse to leave the page and gives an alert asking if they are sure they want to leave the page
 let page = document.querySelector("body");
-page.addEventListener('mouseleave', () => {
-    alert(`Adventure is only a click away, are you sure you're done with the fun?`);
-});
+// page.addEventListener('mouseleave', () => {
+//     alert(`Adventure is only a click away, are you sure you're done with the fun?`);
+// });
 
 //added color changes when the window is resized
 window.addEventListener('resize', (event) => {
@@ -80,7 +80,6 @@ links.forEach(() => {
 
 //load event listener
 window.addEventListener('load', (event) => {
-        console.log('testing loading');
         const welcome = document.querySelectorAll('h2');
         document.querySelector('.main-navigation').style.color = '#09BA82';
         const navLinks = document.querySelectorAll('nav a');

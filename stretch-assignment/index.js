@@ -4,10 +4,10 @@ const blocks = Array.from(document.querySelectorAll('.block'));
 blocks.forEach(() => {
 
     for (let block of blocks) {
-        block.addEventListener('click', (e) => {
+        block.addEventListener('click', () => {
             blockDiv.prepend(block); 
 
-            block.addEventListener('mousedown', (e) => {
+            block.addEventListener('mousedown', () => {
                 block.style.position= 'relative'; 
                 block.style.left = '0px';
                 block.style.left = parseInt(block.style.left) + 10 + 'px';
@@ -30,12 +30,12 @@ blocks.forEach(() => {
                 function draw(timePassed) {
                     block.style.left = timePassed / 5 + 'px';
                 }
-                
-                block.addEventListener('mouseup', (e) => {
+                 
+                block.addEventListener('mouseup', () => {
                     clearInterval(timer);
                     block.style.position= 'relative';
                 });
-                block.addEventListener('mouseleave', (e) => {
+                block.addEventListener('mouseleave', () => {
                     clearInterval(timer);
                     block.style.position= 'relative'; 
                     block.style.left = '0px';
