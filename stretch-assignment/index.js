@@ -30,18 +30,15 @@ blocks.forEach(() => {
                 function draw(timePassed) {
                     block.style.left = timePassed / 5 + 'px';
                 }
-                console.log('testing mouse down'); 
+                
                 block.addEventListener('mouseup', (e) => {
                     clearInterval(timer);
-                    block.style.position= 'relative'; 
-                    block.style.left = '0px';
-                    console.log('testinggg mouse uppp'); 
+                    block.style.position= 'relative';
                 });
                 block.addEventListener('mouseleave', (e) => {
                     clearInterval(timer);
                     block.style.position= 'relative'; 
                     block.style.left = '0px';
-                    console.log('testinggg mouse uppp'); 
                 });
             });
         });

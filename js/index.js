@@ -1,7 +1,6 @@
 // Your code goes here
 //targeting links
 let links = Array.from(document.querySelectorAll('.nav-link'));
-console.log(links);
 
 //targeting buttons
 const button = document.querySelectorAll('.btn');
@@ -41,27 +40,23 @@ pic.addEventListener('mousemove', (event) => {
 
 //Added a mouseout that listens for the mouse to leave the page and gives an alert asking if they are sure they want to leave the page
 let page = document.querySelector("body");
-console.log(page);
-// page.addEventListener('mouseleave', () => {
-//     alert(`Adventure is only a click away, are you sure you're done with the fun?`);
-// })
+page.addEventListener('mouseleave', () => {
+    alert(`Adventure is only a click away, are you sure you're done with the fun?`);
+});
 
 //added color changes when the window is resized
 window.addEventListener('resize', (event) => {
     page.style.background = 'lightblue';
     document.querySelector('.main-navigation').style.background = '#FFEBCD';
-    console.log('we love tests');
 });
 
 //adding audio element
 page.insertAdjacentHTML('afterbegin', '<audio></audio>');
 let audio = document.querySelector('audio');
 audio.src = 'img/sound/waves.wav';
-console.log(audio);
 
 //adding a keydown function to make audio autoplay for a given time
 window.addEventListener('keydown', (event) => {
-    console.log('KEYDOWN!');
     // audio.play();
     setTimeout(() => {
         audio.play();
@@ -151,21 +146,3 @@ button.forEach(() =>  {
         
     }
 });
-
-console.log(button);
-console.log(destArrHeaders);
-console.log(destArrPara);
-
-
-// playing with making other cards disappear
-// buttArr[1].style.display = 'none';
-// buttArr[2].style.display = 'none';
-// destArrHeaders[1].style.display = 'none';
-// destArrHeaders[2].style.display = 'none';
-// destArrPara[1].style.display = 'none';
-// destArrPara[2].style.display = 'none';
-// const destCards = Array.from(destination);
-// for (let left of destCards) {
-//     destination.style.width = '80%';
-
-// }
