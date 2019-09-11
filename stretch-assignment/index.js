@@ -1,9 +1,8 @@
 const blockDiv = document.querySelector('.blocks');
 const blocks = Array.from(document.querySelectorAll('.block'));
 
-
 blocks.forEach(() => {
-    
+
     for (let block of blocks) {
         block.addEventListener('click', (e) => {
             blockDiv.prepend(block); 

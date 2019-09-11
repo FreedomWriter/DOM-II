@@ -1,6 +1,4 @@
 // Your code goes here
-
-
 //targeting links
 let links = Array.from(document.querySelectorAll('.nav-link'));
 console.log(links);
@@ -16,20 +14,14 @@ const destArrHeaders = Array.from(document.querySelectorAll('.destination h4'));
 //targeting destination p's
 const destArrPara = Array.from(document.querySelectorAll('.destination p'));
 
-//targeting content to be hid or manipulated
+//targeting content to be hidden or manipulated
 const intro = document.querySelector('.intro');
 const contentSection = document.querySelectorAll('.content-section');
 const contentDest = document.querySelector('.content-destination');
 const contentPick = document.querySelector('.content-pick');
-
 let pic = document.querySelector('.content-destination img');
-console.log(pic);
-
-
-console.log(contentPick);
 
 //stop propagation
-
 //spin container on click
 contentDest.addEventListener('mousemove', (event) => {
     TweenMax.to(contentDest, 3, {rotation:360, scale:1, repeat:-1, yoyoEase:1, easeOut: 1});
@@ -37,6 +29,7 @@ contentDest.addEventListener('mousemove', (event) => {
         TweenMax.to(contentDest, 1, {scale: 1, rotation:0});
     });
 });
+
 //spin image on click (without affecting rest of container)
 pic.addEventListener('mousemove', (event) => {
     TweenMax.to(pic, 5, {rotation:360, scale:1, repeat:-1, yoyoEase:1, easeOut: 1});
@@ -79,7 +72,6 @@ window.addEventListener('keydown', (event) => {
     }, 2000);
 });
 
-
 //preventing default on nav a's
 links.forEach(() => {
     for (let link of links) {
@@ -105,7 +97,7 @@ window.addEventListener('load', (event) => {
             items.style.color = '#09BA82';
         }
         TweenMax.from(welcome, 1.5, { y :520, repeat:0, ease:Linear.easeNone});
-    })
+    });
 
 //setting remaining headers to match changes in load listener
 destArrHeaders[0].style.color = '#09BA82';
@@ -137,27 +129,21 @@ button.forEach(() =>  {
                 destArrHeaders[2].textContent = 'The Cayman Islands';
                 //hide the content section when button is clicked
                 for(let each of contentSection) {
-                    each.style.display = 'none';
-                    
+                    each.style.display = 'none'; 
                 }
                 
                 //using Array.from as a simpler more readable way to target each button
                 //change image, remove other content and buttons
                 buttArr[0].addEventListener('click', (event) => {
                     pic.src = 'img/cancun.jpg';
-                 
-                    
-                    event.stopImmediatePropagation();
                 })
                 buttArr[1].addEventListener('click', (event) => {
                     let pic = document.querySelector('.content-destination img');
                     pic.src = 'img/everest.jpg';
-                        event.stopImmediatePropagation();
                 })
                 buttArr[2].addEventListener('click', (event) => {
                     let pic = document.querySelector('.content-destination img');
                     pic.src = 'img/cayman.jpg';
-                    event.stopImmediatePropagation();
                 });
             });
         });
