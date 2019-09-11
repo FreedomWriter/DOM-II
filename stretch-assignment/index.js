@@ -26,7 +26,7 @@ blocks.forEach(() => {
                     
                     draw(timePassed);
     
-                }, 10);
+                }, 20);
     
                 function draw(timePassed) {
                     block.style.left = timePassed / 5 + 'px';
@@ -34,6 +34,14 @@ blocks.forEach(() => {
                 console.log('testing mouse down'); 
                 block.addEventListener('mouseup', (e) => {
                     clearInterval(timer);
+                    block.style.position= 'relative'; 
+                    block.style.left = '0px';
+                    console.log('testinggg mouse uppp'); 
+                });
+                block.addEventListener('mouseleave', (e) => {
+                    clearInterval(timer);
+                    block.style.position= 'relative'; 
+                    block.style.left = '0px';
                     console.log('testinggg mouse uppp'); 
                 });
             });
