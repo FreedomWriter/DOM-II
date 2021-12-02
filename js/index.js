@@ -39,10 +39,10 @@ pic.addEventListener('mousemove', (event) => {
 });
 
 //Added a mouseout that listens for the mouse to leave the page and gives an alert asking if they are sure they want to leave the page
-let page = document.querySelector("body");
-page.addEventListener('mouseleave', () => {
-    alert(`Adventure is only a click away, are you sure you're done with the fun?`);
-});
+// let page = document.querySelector("body");
+// page.addEventListener('mouseleave', () => {
+//     alert(`Adventure is only a click away, are you sure you're done with the fun?`);
+// });
 
 //added color changes when the window is resized
 window.addEventListener('resize', (event) => {
